@@ -6,7 +6,15 @@
 void findMinMax(float array[], int low, int high, float *min, float *max);
 
 int main(void) {
-    
+    // sample points
+    float xArray[SIZE] = {-4, 6, 1, 0, 12, -9, 7, 3, 2, 5};
+    float yArray[SIZE] = {8, 34, -22, 11, 13, 18, 9, -43, 32, 0};
+
+    float xMin = FLT_MAX, xMax = FLT_MIN, yMin = FLT_MAX, yMax = FLT_MIN;
+    findMinMax(xArray, 0, SIZE - 1, &xMin, &xMax);
+    findMinMax(yArray, 0, SIZE - 1, &yMin, &yMax);
+
+    printf("Box vertices are: (%.2f, %.2f), (%.2f, %.2f), (%.2f, %.2f), (%.2f, %.2f)\n", xMin, yMin, xMin, yMax, xMax, yMin, xMax, yMax);
 }
 
 void findMinMax(float array[], int low, int high, float *min, float *max) {
